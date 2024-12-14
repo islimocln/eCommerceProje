@@ -1,0 +1,24 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Listesi</title>
+    <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+
+</head>
+<body>
+    <h1>Ürünler</h1>
+    <div>
+        {% for product in products %}
+            <div style="border: 1px solid #ddd; margin-bottom: 10px; padding: 10px;">
+                <img src="{{ product.image_link }}" alt="{{ product.product_name }}" style="width: 100px; height: 100px;">
+                <h2>{{ product.product_name }}</h2>
+                <p><strong>Fiyat:</strong> {{ product.price_dollar }} $</p>
+                <p><strong>Özellikler:</strong> {{ product.model_name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Ürünlerin bulunduğu kapsayıcı */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;           /* Ekran daraldıkça alt satıra geçmesini sağlar */
+    justify-content: space-between; /* Ürünler arasına boşluk bırakır */
+    gap: 20px; /* Ürünler arasındaki boşluk */
+    margin-top: 20px;
+}
+
+/* Ürün kartı */
+.product-card {
+    flex: 0 0 calc(50% - 20px); /* Her ürün, genişliği %50 kadar kaplar */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #fff;
+    text-align: center; /* Metin ortalanır */
+    transition: transform 0.3s; /* Hover efekti için */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Üzerine gelince büyür */
+}
+
+/* Ürün resimleri */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Görsellerin düzgün şekilde görünmesini sağlar */
+    border-radius: 5px;
+}
+
+/* Ürün başlığı */
+.product-card h5 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Ürün fiyatı ve özellikler */
+.product-card p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* Mobil uyumlu tasarım: Ekran küçüldüğünde ürünler alt alta gelir */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 0 100%; /* Küçük ekranlarda her ürün %100 genişlikte olur */
+    }
+}

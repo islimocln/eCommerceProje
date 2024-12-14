@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'products',
     'cart',
     'eCommerceApp',
     'django.contrib.admin',
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'eCommerceProje.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {  # MySQL varsayılan veritabanı
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ecommerce',
         'USER': 'root',
@@ -86,8 +87,17 @@ DATABASES = {
         'OPTIONS': {
             'charset': 'utf8mb4',
         },
+    },
+    'mongodb': {  # MongoDB ikinci veritabanı
+        'ENGINE': 'djongo',
+        'NAME': 'database_name',
+        'CLIENT': {
+            'host': 'mongodb+srv://username:password@cluster.mongodb.net/database_name?retryWrites=true&w=majority'
+        }
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

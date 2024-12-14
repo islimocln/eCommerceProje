@@ -27,7 +27,7 @@
                         <a class="nav-link" href="#">Favorilerim</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sepet</a>
+                        <a class="nav-link" href="{% url 'cart_detail' %}">Sepetim</a>
                     </li>
                 </ul>
             </div>
@@ -71,15 +71,16 @@
             </div>
         </div>
     </div>
-    
 
     <div class="container my-4">
         <div class="promo-banner">
             <h2>En İyisini Satın Alın.</h2>
             <p>Kaçırılmayacak Fiyatla!</p>
-            <a href="#" class="btn btn-warning">Alışverişe Başla</a>
+            <!-- Alışverişe Başla butonu -->
+            <a href="{% url 'product_list' %}" class="btn btn-warning">Alışverişe Başla</a>
         </div>
     </div>
+
     <div id="productCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <!-- İlk Ürün -->

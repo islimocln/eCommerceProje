@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
+
 
 # Product Modeli
 class Product(models.Model):
@@ -8,10 +9,13 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)  # Ürün fiyatı
     stock = models.PositiveIntegerField()  # Stok miktarı
     category = models.CharField(max_length=100)  # Ürün kategorisi
+    image_url = models.URLField(blank=True, null=True)  # Ürün resmi URL'si
+    features = models.JSONField(blank=True, null=True)  # Ürün özellikleri
     created_at = models.DateTimeField(auto_now_add=True)  # Ürünün eklenme zamanı
 
     def __str__(self):
         return self.name
+
 
 # History Modeli (Satın Alma Geçmişi)
 class History(models.Model):
